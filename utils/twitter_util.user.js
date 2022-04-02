@@ -104,7 +104,7 @@ const twitter_util = (function (window) { // eslint-disable-line
     }
 
     if (window.location.origin.match(utils.URL_PATTERNS.TWITTER)) {
-      getElementAsync('main', document.body, 500).then(main => {
+      getElementAsync('main', document.body, 1000).then(main => {
         if (utils.isTweetUrl(window.location.href)) {
           main.querySelectorAll(utils.SELECTORS.TWEET).forEach(tweet => utils.handleTweet(tweet));
         }
@@ -119,7 +119,7 @@ const twitter_util = (function (window) { // eslint-disable-line
         Object.defineProperty(utils, '_observer',
           { value: observer, writable: false, configurable: false, enumerable: false });
       }).catch(reason => {
-        console.error('twitter main not found');
+        console.error(reason);
       });
     }
 
