@@ -152,7 +152,7 @@ const twitter_util = (function (window) { // eslint-disable-line
 
   function logger (message) {
     const debug = window.localStorage.getItem('twitter_util.debug');
-    if (!['', '0', 'false', 'null'].includes(debug.toLowerCase())) {
+    if (!['', '0', 'false', 'null', 'undefined'].includes(String(debug).toLowerCase())) {
       console.debug(message);
     }
   }
