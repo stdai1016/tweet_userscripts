@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Show twitter sensitive content
 // @description  Show sensitive content
-// @version      0.1.0a
+// @version      0.1.0b
 // @license      MIT
 // @namespace    https://github.com/stdai1016
-// @include      *://twitter.com/*
-// @include      *://mobile.twitter.com/*
+// @match        *://twitter.com/*
+// @match        *://mobile.twitter.com/*
 // @require      https://github.com/stdai1016/tweet_userscripts/raw/main/utils/twitter_util.user.js
 // @grant        none
 // ==/UserScript==
@@ -18,7 +18,7 @@
 
   const SELECTORS = {
     BLUR_CONTENT: '.r-yfv4eo',
-    SHOW_SENSITIVE_CONTENT_BUTTON: '[role="button"]:not([data-testid]):not([aria-expanded])',
+    SHOW_SENSITIVE_CONTENT_BUTTON: '[role="button"]:not([data-testid]):not([aria-expanded]):not([aria-describedby])',
     PRESENTATION_BUTTON: '[role="presentation"] [role="button"]'
   };
 
