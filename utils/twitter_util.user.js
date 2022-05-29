@@ -104,7 +104,7 @@ const twitter_util = (function (window) { // eslint-disable-line
     }
 
     if (window.location.origin.match(utils.URL_PATTERNS.TWITTER)) {
-      getElementAsync('main', document.body, 1000).then(main => {
+      getElementAsync('main', document.body, 10000).then(main => {
         if (utils.isTweetUrl(window.location.href)) {
           main.querySelectorAll(utils.SELECTORS.TWEET).forEach(tweet => utils.handleTweet(tweet));
         }
